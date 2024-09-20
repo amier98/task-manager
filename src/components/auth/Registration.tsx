@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Registration = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -18,6 +19,15 @@ const Registration = () => {
 
   const handleSubmit = () => {
     console.log("running");
+
+    if (email.length === 0) {
+      setError("Invalid email, please fill out field");
+    }
+
+    if (password.length === 0) {
+      setError("Invalid password, please fill out field");
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userData) => {
         const user = userData.user;
@@ -25,7 +35,7 @@ const Registration = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(error);
+        console.log(errorCode);
       });
   };
 
@@ -49,12 +59,15 @@ const Registration = () => {
         placeholder="password"
         onChange={handleChange}
       ></input>
-      <button type="button" onClick={handleSubmit}>
-        Register
-      </button>
-      <button type="button" onClick={handlePageChange}>
-        Back to Login
-      </button>
+      <div>{error}</div>
+      <div className="button-Container">
+        <button type="button" onClick={handleSubmit}>
+          Register
+        </button>
+        <button type="button" onClick={handlePageChange}>
+          Back to Login
+        </button>
+      </div>
     </div>
   );
 };
