@@ -9,7 +9,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Registration />} />
+      <Route path="/" element={<Login />} />
       <Route path="/Registration" element={<Registration />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Dashboard" element={<Dashboard />} />

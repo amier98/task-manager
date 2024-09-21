@@ -32,7 +32,7 @@ const Login = () => {
       .then((userData) => {
         //will use this later
         const user = userData.user;
-        console.log(user);
+        console.log(user.displayName);
         navigate("/Dashboard");
       })
       .catch((error) => {
