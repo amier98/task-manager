@@ -61,11 +61,11 @@ const Registration = () => {
       ></input>
       <div>{error}</div>
       <div className="button-Container">
-        <button type="button" onClick={handleSubmit}>
-          Register
-        </button>
         <button type="button" onClick={handlePageChange}>
           Back to Login
+        </button>
+        <button type="button" onClick={handleSubmit}>
+          Register
         </button>
       </div>
     </div>
