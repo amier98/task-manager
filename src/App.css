@@ -49,12 +49,56 @@
 
 .dashboard-summary {
   display: flex;
+  flex-direction: column;
   background-color: white;
-  justify-content: center;
   width: 95%;
   border: 2px solid black;
   border-radius: 6px;
   padding: 20px;
   margin-left: 20px;
   height: 300px;
+}
+
+.addTask-container {
+  display: flex;
+}
+
+.header-style {
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  border: 2px solid black;
+  justify-content: center;
+  border-radius: 6px;
+  width: 300px;
+  height: 150px;
+}
+.button-style {
+  background-color: transparent;
+  border: 0;
+}
+
+.modal-container {
+  position: fixed; /* Stay in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+.modal-container form {
+  border: 2px solid black;
+  padding: 20px;
+  background-color: white;
+}
+
+.modal-container textarea {
+  width: 100%;
 }
